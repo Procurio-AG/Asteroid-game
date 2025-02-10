@@ -42,6 +42,10 @@ def main():
         dt = clock.tick(60)/1000
         for _ in updatable_group:
             _.update(dt)
+        for _ in asteroids_group:
+            if _.is_collision(player_1):
+                print("Game Over!")
+                exit(1)
 
 if __name__ == "__main__":
     main()
