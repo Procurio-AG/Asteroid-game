@@ -49,6 +49,11 @@ def main():
             if _.is_collision(player_1):
                 print("Game Over!")
                 exit(1)
+            for _1 in shot_group:
+                if _1.is_collision(_):
+                    _.split()
+                    _1.kill()
+        
 
 if __name__ == "__main__":
     main()
