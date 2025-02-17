@@ -14,6 +14,8 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
     screen  = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    font = pygame.font.SysFont(None,36)
+    score = 0
 
     #creating groups
     updatable_group = pygame.sprite.Group()
@@ -35,12 +37,15 @@ def main():
     as_f = AsteroidField()
     
     while(1):
+        score_text = f"Score: {score}"
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
         screen.fill(color="black")
         for _ in drawable_group:
             _.draw(screen)
+        score_text_surface = font.render(score_text,True,(255,255,255))
+        screen.blit(score_text_surface,(5,5))
         pygame.display.flip()
         dt = clock.tick(60)/1000
         for _ in updatable_group:
@@ -51,7 +56,7 @@ def main():
                 exit(1)
             for _1 in shot_group:
                 if _1.is_collision(_):
-                    _.split()
+                    score = _.split(score)
                     _1.kill()
         
 
