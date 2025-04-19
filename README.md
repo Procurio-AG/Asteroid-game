@@ -22,6 +22,12 @@
 
 
 ## Screenshots
+- This is a screenshot from a sample gameplay.
 
+![Game Window](/game_window.png)
 
+- This is how the console updates as the game starts and when game ends it displays Game Over! 
 
+![Console](/console.png)
+
+[def]: \game_window.png
